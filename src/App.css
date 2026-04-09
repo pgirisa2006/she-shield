@@ -368,6 +368,56 @@ body, html {
   max-width: 300px;
   line-height: 1.4;
 }
+/* --- SOS Contact Actions --- */
+
+.contact-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.call-contact-btn {
+  background-color: #22c55e; /* Emergency Green */
+  color: white;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.call-contact-btn:hover {
+  background-color: #16a34a;
+  transform: scale(1.05);
+}
+
+.remove-btn {
+  background: none;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.contact-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Ensure the contact items look clean */
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
 /* --- Legal Page Specifics --- */
 
 .search-wrapper {
@@ -455,8 +505,40 @@ body, html {
   margin-top: 20px;
 }
 /* --- Tips Page Specifics --- */
+/* --- Tips Page: Force All Text to White --- */
 
+.tip-text-content h3 {
+  color: #ffffff !important; /* Forces the category title to White */
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.tip-bullets li {
+  color: #ffffff !important; /* Forces bullet text to White */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+  opacity: 0.9; /* Slight opacity for better readability on black */
+}
+
+/* Changes the bullet dot itself to White */
+.tip-bullets li::before {
+  content: "•";
+  color: #ffffff !important; 
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Ensure sub-headers (Logged in as: Girisa) are also white */
+.sub-header, .sub-header .blue-text {
+  color: #ffffff !important;
+}
 .tips-header {
+  color:white;
   text-align: left;
   margin-bottom: 35px;
 }
@@ -509,6 +591,12 @@ body, html {
 .tip-image-placeholder {
   flex: 1;
   max-width: 300px;
+}
+.tip-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the box without stretching */
+  border-radius: 8px;
 }
 
 .img-box {
