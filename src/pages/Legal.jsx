@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../App.css';
 
+// This internal component handles the individual dropdown state
+const LawItem = ({ law }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div 
+      className={`law-card-item ${isOpen ? 'active' : ''}`} 
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <div className="law-card-top">
+        <span className="law-title">{law.title}</span>
+        <span className={`expand-icon ${isOpen ? 'rotate' : ''}`}>↓</span>
+      </div>
+      
+      {isOpen && (
+        <div className="law-card-body">
+          <p>{law.description}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Legal = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -24,7 +47,7 @@ const Legal = () => {
 
       <div className="content-container centered-layout">
         <header className="page-header">
-          <h1>Legal Shield: Know Your Rights</h1>
+          <h1 style={{ color: 'white',fontSize: '30px' }}>Legal Shield: Know Your Rights</h1>
           <p className="sub-header">Search for specific keywords like 'Work', 'Police', or 'Cyber'.</p>
         </header>
 
@@ -41,15 +64,7 @@ const Legal = () => {
         <div className="laws-list-container">
           {filteredLaws.length > 0 ? (
             filteredLaws.map((law) => (
-              <div key={law.id} className="law-card-item">
-                <div className="law-card-top">
-                  <span className="law-title">{law.title}</span>
-                  <span className="expand-icon">↓</span>
-                </div>
-                <div className="law-card-body">
-                  <p>{law.description}</p>
-                </div>
-              </div>
+              <LawItem key={law.id} law={law} />
             ))
           ) : (
             <p className="no-results">No laws found matching your search.</p>
