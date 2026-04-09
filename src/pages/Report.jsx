@@ -15,7 +15,7 @@ const Report = () => {
       <div className="content-container centered-layout">
         <div className="report-card-main">
           <header className="report-card-header">
-            <h2>Secure Incident Report</h2>
+            <h2 style={{ color: 'white' }}>Secure Incident Report</h2>
             <p className="session-info">
               Session active for: <span className="blue-text">Girisa</span>
             </p>
@@ -41,13 +41,6 @@ const Report = () => {
                 placeholder="Please provide as much detail as possible (Date, Time, Location, etc.)"
                 required
               ></textarea>
-            </div>
-
-            <div className="form-group">
-              <label>Evidence (Optional)</label>
-              <div className="file-upload-zone">
-                <p>Click to upload images or documents</p>
-              </div>
             </div>
 
             <button type="submit" className="submit-report-btn">
