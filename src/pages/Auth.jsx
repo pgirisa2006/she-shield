@@ -40,7 +40,6 @@ const Auth = () => {
               {isLogin ? ' Sign Up' : ' Login'}
             </span>
           </p>
-          <p className="session-tag">Reg No: 24BCB0009</p>
         </div>
       </div>
     </div>
