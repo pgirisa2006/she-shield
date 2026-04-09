@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../App.css';
+import imgWork from '../assets/2.jpg';
+import imgTravel from '../assets/3.jpg';
+import imgOnline from '../assets/4.jpg';
 
 const Tips = () => {
   const [activeFilter, setActiveFilter] = useState("ALL");
@@ -10,6 +13,7 @@ const Tips = () => {
       id: 1,
       category: "WORKPLACE",
       title: "Workplace Safety",
+      image: imgWork,
       points: [
         "Familiarize yourself with all emergency exits and fire escape routes.",
         "Trust your instincts; report unwelcome behavior to HR immediately.",
@@ -21,6 +25,7 @@ const Tips = () => {
       id: 2,
       category: "TRAVEL",
       title: "Travel & Commuting",
+      image: imgTravel,
       points: [
         "Always share your live location with a trusted contact via the SOS page.",
         "Stay alert and avoid using headphones in secluded areas.",
@@ -32,6 +37,7 @@ const Tips = () => {
       id: 3,
       category: "ONLINE",
       title: "Digital & Online Safety",
+      image: imgOnline,
       points: [
         "Enable Two-Factor Authentication (2FA) on all important accounts.",
         "Don't share real-time locations or personal details with strangers.",
@@ -50,7 +56,7 @@ const Tips = () => {
       <Navbar />
       <div className="content-container">
         <header className="tips-header">
-          <h1>Safety Resources</h1>
+          <h1 style={{ color: 'white' }}>Safety Resources</h1>
           <p className="sub-header">Essential guides for your daily security. Logged in as: <span className="blue-text">Girisa</span></p>
         </header>
 
@@ -72,7 +78,7 @@ const Tips = () => {
               <div className="tip-image-placeholder">
                 {/* Visual element placeholder to match Image 9 */}
                 <div className="img-box">
-                   <span className="img-icon">🛡️</span>
+                  <img src={tip.image} alt={tip.title} className="tip-card-img" />
                 </div>
               </div>
               <div className="tip-text-content">
